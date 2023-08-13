@@ -10,6 +10,7 @@ export const links: LinksFunction = () => [
 export const loader = async () => {
   const counts = await prisma.count.findMany();
   console.log('counts: ', counts)
+  return null;
 };
 
 export default function IndexRoute() {
