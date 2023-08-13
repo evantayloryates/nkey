@@ -6,11 +6,12 @@
   "type": "module",
   "scripts": {
     "start": "node ./server-build",
-    "setup": "npm install && cpy .env.example . --rename=.env && prisma migrate reset --force",
     "build": "run-s build:*",
     "build:remix": "remix build --sourcemap",
     "build:server": "tsx ./build.ts",
-    "dev": "cross-env PORT=3333 tsx watch ./app",
+    "dev": "remix dev -c \"node ./server/dev-server.js\" --manual",
+    "devold": "cross-env PORT=3333 tsx watch ./app",
+    "setup": "npm install && cpy .env.example . --rename=.env && prisma migrate reset --force",
     "buildold": "tsc"
   },
   "keywords": [],
@@ -50,6 +51,7 @@
     "chokidar": "^3.5.3",
     "close-with-grace": "^1.2.0",
     "cookie": "^0.5.0",
+    "execa": "^7.2.0",
     "express": "^4.18.2",
     "isbot": "^3.6.13",
     "litefs-js": "^1.1.2",
