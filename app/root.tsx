@@ -9,6 +9,7 @@ import {
 import type { LinksFunction } from "@remix-run/node";
 import type { PropsWithChildren } from "react";
 
+import tailwindStylesheetUrl from './styles/tailwind.css'
 import globalLargeStylesUrl from "~/styles/global-large.css";
 import globalMediumStylesUrl from "~/styles/global-medium.css";
 import globalStylesUrl from "~/styles/global.css";
@@ -16,6 +17,7 @@ import globalStylesUrl from "~/styles/global.css";
 export const links: LinksFunction = () => {
   return [
     cssBundleHref ? { rel: 'preload', href: cssBundleHref, as: 'style' } : null,
+    { rel: 'preload', href: tailwindStylesheetUrl, as: 'style' },
     { rel: "stylesheet", href: globalStylesUrl },
     {
       rel: "stylesheet",
@@ -27,6 +29,7 @@ export const links: LinksFunction = () => {
       href: globalLargeStylesUrl,
       media: "screen and (min-width: 1024px)",
     },
+    { rel: 'stylesheet', href: tailwindStylesheetUrl },
     cssBundleHref ? { rel: 'stylesheet', href: cssBundleHref } : null,
   ].filter(Boolean);
 }

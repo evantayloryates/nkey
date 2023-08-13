@@ -8,9 +8,9 @@ export default {
 	ignoredRouteFiles: ['**/*'],
 	serverModuleFormat: 'esm',
 	serverPlatform: 'node',
-	tailwind: false,
+	tailwind: true,
 	postcss: false,
-	watchPaths: [],
+	watchPaths: ['./tailwind.config.ts'],
 	future: {
 		v2_headers: true,
 		v2_meta: true,

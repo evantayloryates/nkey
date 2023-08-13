@@ -36,4 +36,4 @@
 1. Filter by:
   - (machine) `fly logs -i <MACHINE_ID>`
   - (region) `fly logs -r <REGION_ID>` (see all IDs with `fly platform regions`)
-  - 
+
