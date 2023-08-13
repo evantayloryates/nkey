@@ -11,7 +11,7 @@ export default function IndexRoute() {
     <div className="container">
       <div className="content">
         <h1>
-          Remix <span>Jokes!</span>
+          Remix <span>Jokes!</span> DEPLOY
         </h1>
       </div>
     </div>
