@@ -19,8 +19,9 @@ export default function IndexRoute() {
   
   return (<>
     <div className="bg-blue-600 p-4 text-white">
-      <div className="container mx-auto">
+      <div className="container flex flex-row justify-between">
         <h1 className="text-xl">Habit Tracker</h1>
+        <h4 className="text-m">{user.email}</h4>
       </div>
     </div>
 
