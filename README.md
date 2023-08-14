@@ -38,11 +38,10 @@
   - (region) `fly logs -r <REGION_ID>` (see all IDs with `fly platform regions`)
 
 ### Build and Run Locally
-`docker container rm nkey-app ; docker image rm nkey:latest`
+`docker container rm -f nkey-app ; docker image rm nkey:latest`
 `docker build -t nkey:latest -f Dockerfile.dev .`
-`docker container rm nkey-app ; docker run -p 3000:8081 p 3001:3001 -v nkey-db:/data/litefs -v $(pwd)/app:/app/app --name nkey-app nkey:latest`
+`docker container rm -f nkey-app ; docker run -p 3000:8081 -p 3001:3001 -v nkey-db:/data/litefs -v $(pwd)/app:/app/app -v $(pwd)/prisma:/app/prisma -v nkey-packages:/app/node_modules --name nkey-app nkey:latest`
 ### SSH Into Container
 `docker exec -it nkey-app /bin/bash`
 ### Kill container
 `docker kill nkey-app`
-//IMAGE_ID=$(docker images --format '{{.Repository}}:{{.Tag}} {{.ID}}' | grep '^nkey:latest' | awk '{print $2}')
